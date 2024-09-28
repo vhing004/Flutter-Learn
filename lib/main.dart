@@ -258,7 +258,7 @@ class MyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Card(
-      color: Color.fromARGB(255, 137, 77, 206),
+      color: Color.fromARGB(255, 25, 130, 221),
       margin: EdgeInsets.all(50),
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
