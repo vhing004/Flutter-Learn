@@ -133,6 +133,7 @@
 // }
 
 import 'package:flutter/material.dart';
+import 'package:my_app_to_learn/widget/StatelessWidget.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -153,120 +154,8 @@ void main() {
           ),
         ),
 
-        body: MyCard(),
+        body: Center(child: MyWidget(true)),
       ),
     ),
   ));
-}
-
-// StatelessWidget: chỉ cần extends rồi override build
-// class MyWidget extends StatelessWidget {
-//   // const MyWidget({super.key});
-//   final bool loading;
-//   const MyWidget(this.loading);
-//   @override
-//   Widget build(BuildContext context) {
-//     return loading ? const CircularProgressIndicator() : const Text("State");
-//   }
-// }
-
-// StatefulWidget: phải createState r tạo ra 1 thk mới extend từ thằng createState rồi override build
-// class MyWidget2 extends StatefulWidget {
-//   final bool loading;
-//   MyWidget2(this.loading);
-//   @override
-//   State<StatefulWidget> createState() {
-//     return _MyWidget2State();
-//   }
-// }
-// class _MyWidget2State extends State<MyWidget2> {
-//   late bool _localLoading;
-// // Hàm khởi tạo state
-//   @override
-//   void initState() {
-//     super.initState();
-//     setState(() {
-//       _localLoading = widget.loading;
-//     });
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     // trong đây ko thể truy xuất loading từ MyWidget2 nen muốn dùng thì ta dùng "widget"
-//     return _localLoading
-//         ? const CircularProgressIndicator()
-//         : ElevatedButton(onPressed: onClick, child: const Text("Click here"));
-//   }
-//   void onClick() {
-//     setState(() {
-//       _localLoading = true;
-//     });
-//   }
-// }
-
-// WIDGET: TEXT(), TextStyle
-// class MyText extends StatelessWidget {
-//   const MyText({super.key});
-//   @override
-//   Widget build(BuildContext context) {
-//     return const Padding(
-//       padding: EdgeInsets.all(20.0),
-//       child: Text(
-//         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident saepe cupiditate nesciunt quis dolores consequatur ipsa similique nostrum distinctio temporibus. Voluptas sint pariatur modi aliquam architecto expedita rerum, enim autem.",
-//         // textDirection: TextDirection.rtl,
-//         textAlign: TextAlign.center,
-//         maxLines: 2, //giới hạn dòng
-//         overflow: TextOverflow.ellipsis, //nếu vượt quá thì hiện 3 chấm ...
-//         // textScaleFactor: 1.9,
-//         style: TextStyle(
-//           color: Color.fromARGB(255, 136, 174, 206),
-//           backgroundColor: Colors.green,
-//           fontSize: 15,
-//           wordSpacing: 10,
-//           letterSpacing: 2.5,
-//           decoration: TextDecoration.underline,
-//           fontStyle: FontStyle.italic,
-//         ),
-//       ),
-//     );
-//   }
-// }
-
-// RichText:
-// class MyRichText extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Center(
-//       child: RichText(
-//           text: const TextSpan(children: <TextSpan>[
-//         TextSpan(text: "My name is "),
-//         TextSpan(
-//             text: "Nguyen Huu Vinh",
-//             style: TextStyle(
-//                 fontWeight: FontWeight.w600,
-//                 fontSize: 20,
-//                 color: Colors.black26)),
-//         TextSpan(text: ", 20 years old"),
-//       ])),
-//     );
-//   }
-// }
-
-// PADDING, MARGIN
-class MyCard extends StatelessWidget {
-  const MyCard({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Card(
-      color: Color.fromARGB(255, 25, 130, 221),
-      margin: EdgeInsets.all(50),
-      child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
-        child: Text(
-          "My Card !!",
-          style: TextStyle(fontSize: 20, color: Colors.white),
-        ),
-      ),
-    );
-  }
 }
