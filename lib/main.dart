@@ -133,7 +133,7 @@
 // }
 
 import 'package:flutter/material.dart';
-import 'package:my_app_to_learn/widget/StatelessWidget.dart';
+import 'package:my_app_to_learn/widget/WrapWidget/Container.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -141,21 +141,19 @@ void main() {
     home: SafeArea(
       //SafeArea để nó ko bị đè lên status bar.
       child: Scaffold(
-        // đại diện cho khung màn hình.
-        appBar: AppBar(
-          // appBar ngang hàng vs body trong Scaffold.
-          backgroundColor: const Color.fromARGB(255, 162, 150, 191),
-          shadowColor: Colors.white,
-          title: const Text(
-            "My App Test",
-            style: TextStyle(
-              color: Colors.white,
+          // đại diện cho khung màn hình.
+          appBar: AppBar(
+            // appBar ngang hàng vs body trong Scaffold.
+            backgroundColor: const Color.fromARGB(255, 162, 150, 191),
+            shadowColor: Colors.white,
+            title: const Text(
+              "My App Test",
+              style: TextStyle(
+                color: Colors.white,
+              ),
             ),
           ),
-        ),
-
-        body: Center(child: MyWidget(true)),
-      ),
+          body: const MyContainer()),
     ),
   ));
 }
